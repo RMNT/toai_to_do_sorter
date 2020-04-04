@@ -68,7 +68,6 @@ class todolist():
         elif(len(args) == 1 and isinstance(args[0], int)):
             ind = args[0] - 1
             print("Pasirinkote redaguoti: {}".format(self.tasks[ind]))
-            #pakeisti ta taska i temp
             ch = input("Nutraukti redagavima - 'q', ne - bet kuri kita simboli")
             if(ch == 'q'):
                 return 0
@@ -117,6 +116,7 @@ class todolist():
         pdf.set_font('Courier', '', 25)
         pdf.cell(180, 20, date, 0, 1, 'C')
         pdf.ln()
+        pdf.set_font('Courier', '', 20)
         for item in self.tasks:
             pdf.write(10, str(item))
             pdf.ln()

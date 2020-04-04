@@ -28,7 +28,7 @@ if __name__ == "__main__":
     print("Pasirinkite viena is veiksmu: ")
     choices()
     
-    while (1):
+    while True:
         x = input()
         if(x == '8'):
             taskList.toFile()
