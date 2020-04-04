@@ -101,7 +101,7 @@ class todolist():
             self.delTask(x)
         elif(len(args) == 1 and isinstance(args[0], int) and args[0] > 0):
             ind = args[0] - 1
-            print("Panaikinama: " + self.tasks[ind].name)
+            print("Panaikinta: " + self.tasks[ind].name)
             del self.tasks[ind]
             self.__rewriteIndexes__()
     
