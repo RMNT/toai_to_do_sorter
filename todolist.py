@@ -1,6 +1,7 @@
 from task import task
 import re
 from datetime import date as dt, timedelta, datetime
+from operator import itemgetter, attrgetter, methodcaller
 from fpdf import FPDF
 
 class todolist():
@@ -15,7 +16,6 @@ class todolist():
             print("Toks pavadinimas jau yra. Iveskite kita: ")
         imp = 0
         taskDate = datetime.now().date() - timedelta(days=1)
-        #imp = int(input("Uzduoties svarba (1-5): "))
         while not self.__checkImportance__(imp):
             imp = int(input("Uzduoties svarba (1-5): ")) 
         while True:
@@ -34,7 +34,7 @@ class todolist():
         return False
     
     def __checkDate__(self, due):
-        if(due > datetime.now().date()):
+        if(due >= datetime.now().date()):
             return True
         return False
     
@@ -88,6 +88,9 @@ class todolist():
         print("Ilgis: " + str(len(self.tasks)) + "\n")
     
     def taskList(self):
+        if (len(self.tasks) == 0):
+            print("Uzuociu nera")
+            return
         for task in self.tasks:
             print(task)
             

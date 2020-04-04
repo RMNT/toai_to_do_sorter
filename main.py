@@ -3,7 +3,7 @@ from todolist import todolist
 import os.path
 
 def choices():
-    print("\n1. Prideti uzduoti\n2. Perziureti uzduotis\n3. Redaguoti uzduoti\n4. Uzduociu skaicius\n5. Atlikta uzduotis\n6. Galimi veiksmai\n7. Konvertuoti i PDF\n8. Baigti darba")
+    print("\n1. Prideti uzduoti\n2. Perziureti uzduotis\n3. Redaguoti uzduoti\n4. Uzduociu skaicius\n5. Atlikta uzduotis\n6. Galimi veiksmai\n7. Konvertuoti i PDF\n8. Baigti darba (ir issaugoti)")
 
 def wrongChoice():
     print("Tokio pasirinkimo nera")
@@ -22,7 +22,6 @@ def choose(x, taskList):
 
 if __name__ == "__main__":
     taskList = todolist()
-    #f = open("tasks.txt", "w")
     if(os.path.isfile("tasks.txt")):
         taskList.fromFile()
     print("Uzduociu tvarkymo programa v1.0")
@@ -35,6 +34,3 @@ if __name__ == "__main__":
             taskList.toFile()
             break
         choose(x, taskList)
-        #   keletas imanomu sarasu
-        #uztiktinti pavadinimo unikaluma
-        #   integracija su google calender
