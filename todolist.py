@@ -1,6 +1,7 @@
 from task import task
 import re
 from datetime import date as dt, timedelta, datetime
+from fpdf import FPDF
 
 class todolist():
     def __init__(self):
@@ -104,6 +105,19 @@ class todolist():
     def __rewriteIndexes__(self):
         for i in range(len(self.tasks)):
             self.tasks[i].ind = i+1
+           
+    def convertToPDF(self):
+        date = str(datetime.now().date())
+        title = date + ".pdf"
+        pdf = FPDF()
+        pdf.add_page()
+        pdf.set_font('Courier', '', 25)
+        pdf.cell(180, 20, date, 0, 1, 'C')
+        pdf.ln()
+        for item in self.tasks:
+            pdf.write(10, str(item))
+            pdf.ln()
+        pdf.output(title, 'F')
            
     def fromFile(self):       
         with open("tasks.txt", "r") as f:

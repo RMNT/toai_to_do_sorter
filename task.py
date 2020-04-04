@@ -6,4 +6,4 @@ class task:
         self.importance = importance
         self.dueDate = dueDate
     def __str__(self):
-        return "{}. {:<20} {:<3} {:<12}".format(self.ind, self.name, str(self.importance), str(self.dueDate))
+        return "{}. {:<25} {:<3} {:<12}".format(self.ind, self.name, str(self.importance), str(self.dueDate))
