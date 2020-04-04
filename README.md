@@ -3,7 +3,7 @@ The task sorter is a program developed for the graduation from Group E of Tribe 
 
 ## Prerequisites
 ```
-pip install reportlab
+pip install fpdf
 ```
 
 ## Authors
