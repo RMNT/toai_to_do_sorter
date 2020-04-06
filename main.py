@@ -11,7 +11,7 @@ def wrongChoice():
     print("Tokio pasirinkimo nera")
     
 def clear():
-        os.sys('cls')
+        system('clear')
 
 def choose(x, taskList):
     switcher = {
@@ -26,6 +26,7 @@ def choose(x, taskList):
     return switcher.get(x, wrongChoice)()
 
 if __name__ == "__main__":
+    clear()
     taskList = todolist()
     if(os.path.isfile("tasks.txt")):
         taskList.fromFile()
@@ -37,10 +38,10 @@ if __name__ == "__main__":
         x = input()
         if x == '8':
             taskList.toFile()
-            system('clear')
+            clear()
             break
         choose(x, taskList)
         keyboard.wait('enter')
-        system('clear')
+        clear()
         
 #pip3 install keyboard
