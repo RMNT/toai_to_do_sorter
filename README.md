@@ -4,6 +4,7 @@ The task sorter is a program developed for the graduation from Group E of Tribe 
 ## Prerequisites
 ```
 pip install fpdf
+pip install keyboard
 ```
 
 ## Authors
