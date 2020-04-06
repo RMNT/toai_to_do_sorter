@@ -1,12 +1,17 @@
 import task
 from todolist import todolist
-import os.path
+import os
+from os import system
+import keyboard
 
 def choices():
     print("\n1. Prideti uzduoti\n2. Perziureti uzduotis\n3. Redaguoti uzduoti\n4. Uzduociu skaicius\n5. Atlikta uzduotis\n6. Galimi veiksmai\n7. Konvertuoti i PDF\n8. Baigti darba (ir issaugoti)")
 
 def wrongChoice():
     print("Tokio pasirinkimo nera")
+    
+def clear():
+        os.sys('cls')
 
 def choose(x, taskList):
     switcher = {
@@ -26,11 +31,16 @@ if __name__ == "__main__":
         taskList.fromFile()
     print("Uzduociu tvarkymo programa v1.0")
     print("Pasirinkite viena is veiksmu: ")
-    choices()
     
     while True:
+        choices()
         x = input()
-        if(x == '8'):
+        if x == '8':
             taskList.toFile()
+            system('clear')
             break
         choose(x, taskList)
+        keyboard.wait('enter')
+        system('clear')
+        
+#pip3 install keyboard
